@@ -10,8 +10,10 @@ Route::get('me', 'User\MeController@getMe');
 // Route group for authenticated users only
 Route::group(['middleware' => ['auth:api']], function(){
 
+ 	Route::post('logout', 'Auth\LoginController@logout');
 
- 	Route::post('logout', 'Auth\LoginController@getMe');
+ 	Route::put('settings/profile', 'User\SettingsController@updateProfile');
+ 	Route::put('settings/password', 'User\SettingsController@updatePassword');
 
 });
 
