@@ -15,6 +15,11 @@ Route::group(['middleware' => ['auth:api']], function(){
  	Route::put('settings/profile', 'User\SettingsController@updateProfile');
  	Route::put('settings/password', 'User\SettingsController@updatePassword');
 
+ 	//Rutas para categoria
+ 	Route::get('categories', 'Producto\CategoriaController@index');
+ 	Route::post('category/register', 'Producto\CategoriaController@store');
+
+
 });
 
 
